@@ -24,7 +24,7 @@ public class Monster extends Entity{
 
     private int generateXpDropped(){
         Random r = new Random();
-        return getCurrentLevel()*  r.nextInt((2 - 1) + 1) + 1;
+        return (getCurrentLevel()*  r.nextInt((2 - 1) + 1) + 1) * 3;
     }
 
     @Override

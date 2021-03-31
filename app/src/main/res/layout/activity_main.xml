@@ -109,4 +109,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/goldAmount" />
 
+    <ImageButton
+        android:id="@+id/aquaButton"
+        android:layout_width="105dp"
+        android:layout_height="80dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/rsz_eau" />
+
+    <ImageButton
+        android:id="@+id/flameButton"
+        android:layout_width="105dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="4dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/aquaButton"
+        app:srcCompat="@drawable/rsz_flame" />
+
+    <ProgressBar
+        android:id="@+id/playerMana"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="118dp"
+        android:layout_height="16dp"
+        android:progressTint="#2196F3"
+        app:layout_constraintStart_toStartOf="@+id/playerLife"
+        app:layout_constraintTop_toBottomOf="@+id/playerLife" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

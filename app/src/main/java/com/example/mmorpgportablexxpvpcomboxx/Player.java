@@ -51,6 +51,7 @@ public class Player extends Entity {
                 setCurrentLevel(getCurrentLevel() + 1);
                 distribPoints += 2;
                 setXpNeededToNextLevel(computeXpNeededToNextLevel());
+                setCurrentMana(getMaxMana() + 5);
                 break;
             } else {
                 actualXp -= getXpNeededToNextLevel() - getCurrentXp();
@@ -58,6 +59,7 @@ public class Player extends Entity {
                 setCurrentLevel(getCurrentLevel() + 1);
                 distribPoints += 2;
                 setXpNeededToNextLevel(computeXpNeededToNextLevel());
+                setCurrentMana(getMaxMana() + 5);
             }
         }
     }

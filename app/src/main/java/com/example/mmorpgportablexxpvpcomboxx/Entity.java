@@ -79,4 +79,8 @@ public class Entity {
     public int getPercentageHealth(){
         return (int) (((float)currentHealth / (float)maxHealth) * 100);
     }
+
+    public int getPercentageMana(){
+        return (int) (((float)currentMana / (float)maxMana) * 100);
+    }
 }
