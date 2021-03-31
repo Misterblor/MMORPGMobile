@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
         goldAmount.setText(Integer.toString(player.getCurrentGold()) + " GOLD");
 
+        player.setDistribPoints(20); // TEST
         distribPoints.setText(Integer.toString(player.getDistribPoints()) + " Points");
 
         strengthButton.setText(Integer.toString(player.getStr()) + " STR");
@@ -120,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (player.getCurrentMana() >= 10) {
-                    int lifeUpdate = (int) (slime.getCurrentHealth() - (player.getIntelligence() * 1.7));
+                    int lifeUpdate = (int) (slime.getCurrentHealth() - (player.getIntelligence() * 2.4));
                     player.setCurrentMana(player.getCurrentMana() - 10);
                     if (lifeUpdate <= 0) {
                         monsterDeath();
@@ -139,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (player.getCurrentMana() >= 10) {
-                    int lifeUpdate = (int) (slime.getCurrentHealth() - (player.getIntelligence() * 1.7));
+                    int lifeUpdate = (int) (slime.getCurrentHealth() - (player.getIntelligence() * 2));
                     player.setCurrentMana(player.getCurrentMana() - 10);
                     if (lifeUpdate <= 0) {
                         monsterDeath();
