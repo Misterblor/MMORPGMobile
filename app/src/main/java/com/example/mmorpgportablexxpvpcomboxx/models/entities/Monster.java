@@ -8,9 +8,9 @@ public class Monster extends Entity{
     private int goldDropped;
 
     public Monster() {
-        setCurrentLevel(generateMonsterLevel(7, 1));
+        getEntityLevel().setCurrentLevel(generateMonsterLevel(7, 1));
 
-        setMaxHealth(getCurrentLevel() * 100);
+        setMaxHealth(getEntityLevel().getCurrentLevel() * 100);
         setCurrentHealth(getMaxHealth());
 
         xpDropped = generateXpDropped();
@@ -24,12 +24,12 @@ public class Monster extends Entity{
 
     private int generateXpDropped(){
         Random r = new Random();
-        return (getCurrentLevel()*  r.nextInt((2 - 1) + 1) + 1) * 3;
+        return (getEntityLevel().getCurrentLevel()*  r.nextInt((2 - 1) + 1) + 1) * 3;
     }
 
     @Override
     public String toString() {
-        return "LVL " + getCurrentLevel() + " Slime " + getCurrentHealth() + "/" + getMaxHealth();
+        return "LVL " + getEntityLevel().getCurrentLevel() + " Slime " + getCurrentHealth() + "/" + getMaxHealth();
     }
 
     public int getXpDropped() {

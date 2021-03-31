@@ -29,39 +29,11 @@ public class Player extends Entity {
         setMaxMana(100);
         setCurrentMana(getMaxMana());
 
-        setCurrentLevel(1);
-        setCurrentXp(0);
-        setXpNeededToNextLevel(20);
+        getEntityLevel().setCurrentLevel(1);
+        getEntityLevel().setCurrentXp(0);
+        getEntityLevel().setXpNeededToNextLevel(20);
 
         this.name = name;
-    }
-
-    private int computeXpNeededToNextLevel(){
-        return (int)(getXpNeededToNextLevel() * 1.2);
-    }
-
-    public void recieveXp(int xp){
-        int actualXp = xp;
-        while (actualXp > 0){
-            if (getCurrentXp() + actualXp < getXpNeededToNextLevel()){
-                setCurrentXp(getCurrentXp() + actualXp);
-                break;
-            } else if (getCurrentXp() + actualXp == getXpNeededToNextLevel()){
-                setCurrentXp(0);
-                setCurrentLevel(getCurrentLevel() + 1);
-                distribPoints += 2;
-                setXpNeededToNextLevel(computeXpNeededToNextLevel());
-                setCurrentMana(getMaxMana() + 5);
-                break;
-            } else {
-                actualXp -= getXpNeededToNextLevel() - getCurrentXp();
-                setCurrentXp(0);
-                setCurrentLevel(getCurrentLevel() + 1);
-                distribPoints += 2;
-                setXpNeededToNextLevel(computeXpNeededToNextLevel());
-                setCurrentMana(getMaxMana() + 5);
-            }
-        }
     }
 
     public int getAtk() {

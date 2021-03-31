@@ -9,9 +9,7 @@ public class Entity {
     private int currentMana;
 
 
-    private int currentLevel;
-    private int currentXp;
-    private int xpNeededToNextLevel;
+    private Level entityLevel;
 
     public Entity() {
     }
@@ -48,32 +46,16 @@ public class Entity {
         this.currentMana = currentMana;
     }
 
-    public int getCurrentLevel() {
-        return currentLevel;
+    public Level getEntityLevel() {
+        return entityLevel;
     }
 
-    public void setCurrentLevel(int currentLevel) {
-        this.currentLevel = currentLevel;
-    }
-
-    public int getCurrentXp() {
-        return currentXp;
-    }
-
-    public void setCurrentXp(int currentXp) {
-        this.currentXp = currentXp;
-    }
-
-    public int getXpNeededToNextLevel() {
-        return xpNeededToNextLevel;
-    }
-
-    public void setXpNeededToNextLevel(int xpNeededToNextLevel) {
-        this.xpNeededToNextLevel = xpNeededToNextLevel;
+    public void setEntityLevel(Level entityLevel) {
+        this.entityLevel = entityLevel;
     }
 
     public String levelToString(){
-        return "LVL " + currentLevel + "(" + currentXp + "/" + xpNeededToNextLevel + ")";
+        return "LVL " + entityLevel.getCurrentLevel() + "(" + entityLevel.getCurrentXp() + "/" + entityLevel.getXpNeededToNextLevel() + ")";
     }
 
     public int getPercentageHealth(){
