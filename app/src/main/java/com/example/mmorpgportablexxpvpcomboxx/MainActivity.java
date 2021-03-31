@@ -8,6 +8,9 @@ import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.mmorpgportablexxpvpcomboxx.models.entities.Monster;
+import com.example.mmorpgportablexxpvpcomboxx.models.entities.Player;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView playerName;

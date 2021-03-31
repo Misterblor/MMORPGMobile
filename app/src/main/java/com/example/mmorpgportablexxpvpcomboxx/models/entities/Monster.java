@@ -1,4 +1,4 @@
-package com.example.mmorpgportablexxpvpcomboxx;
+package com.example.mmorpgportablexxpvpcomboxx.models.entities;
 
 import java.util.Random;
 
