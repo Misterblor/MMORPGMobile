@@ -15,6 +15,7 @@ public class Player extends Entity {
     private String name;
 
     public Player(String name) {
+        super();
         str = 10;
         intelligence = 10;
         atk = (int) (str * 1.5);

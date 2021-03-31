@@ -12,6 +12,7 @@ public class Entity {
     private Level entityLevel;
 
     public Entity() {
+        entityLevel = new Level(1, 0, 20);
     }
 
     public int getMaxHealth() {

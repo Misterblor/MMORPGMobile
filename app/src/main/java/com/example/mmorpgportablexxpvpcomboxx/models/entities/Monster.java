@@ -8,6 +8,7 @@ public class Monster extends Entity{
     private int goldDropped;
 
     public Monster() {
+        super();
         getEntityLevel().setCurrentLevel(generateMonsterLevel(7, 1));
 
         setMaxHealth(getEntityLevel().getCurrentLevel() * 100);

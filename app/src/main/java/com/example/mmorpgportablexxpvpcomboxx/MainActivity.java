@@ -158,7 +158,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void monsterDeath(){
         slime.setCurrentHealth(0);
-        player.recieveXp(slime.getXpDropped());
+        int nbLeveled = player.getEntityLevel().recieveXp(slime.getXpDropped());
+        player.setDistribPoints(player.getDistribPoints() + (nbLeveled * 2));
         playerMana.setProgress(player.getPercentageMana());
         player.setCurrentGold(player.getCurrentGold() + slime.getGoldDropped());
         playerLevel.setText(player.levelToString());
