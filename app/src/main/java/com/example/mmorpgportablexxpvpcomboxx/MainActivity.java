@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (player.getCurrentMana() >= 10) {
-                    int lifeUpdate = (int) (slime.getCurrentHealth() - (player.getIntelligence() * 1.2));
+                    int lifeUpdate = (int) (slime.getCurrentHealth() - (player.getIntelligence() * 1.7));
                     player.setCurrentMana(player.getCurrentMana() - 10);
                     if (lifeUpdate <= 0) {
                         monsterDeath();
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (player.getCurrentMana() >= 10) {
-                    int lifeUpdate = (int) (slime.getCurrentHealth() - (player.getIntelligence() * 1.2));
+                    int lifeUpdate = (int) (slime.getCurrentHealth() - (player.getIntelligence() * 1.7));
                     player.setCurrentMana(player.getCurrentMana() - 10);
                     if (lifeUpdate <= 0) {
                         monsterDeath();
@@ -155,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
     private void monsterDeath(){
         slime.setCurrentHealth(0);
         player.recieveXp(slime.getXpDropped());
+        playerMana.setProgress(player.getPercentageMana());
         player.setCurrentGold(player.getCurrentGold() + slime.getGoldDropped());
         playerLevel.setText(player.levelToString());
         goldAmount.setText(Integer.toString(player.getCurrentGold()) + " GOLD");
